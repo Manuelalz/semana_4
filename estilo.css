@@ -1,0 +1,22 @@
+.fondo{
+background-size: cover;
+background: url('oli.png');
+}
+
+.form1{
+position: absolute;
+top: 7%;
+left: 37%;
+width: 25%;
+height: 25%;
+background-color: pink;
+}
+
+.form2{
+position: absolute;
+top: 40%;
+left: 30%;
+width: 40%;
+height: 40%;
+background-color: aqua;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actividad Semana4</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body class="fondo">
+	<div class="form1"><form><center>
+		<label><h1>Digite un nombre</h1></label>
+		<input type="text" id="nombre1" placeholder="Primera letra mayuscula">
+		<br><br>
+		<input type="button" value="Ingresar" onclick="ing();">
+	</center></form></div>
+
+	<div class="form2"><form><center>
+		<label><h1>Digite lo que desea borrar</h1></label>
+		<input type="text" id="nombre2" placeholder="Primera letra mayuscula"><br><br>
+		<input type="button" value="Borrar" onclick="quiere();">
+		<label><h2>Resultado:</h2></label>
+		<input type="text" id="resultado">
+	</center></form></div>
+
+	<script>
+	var nombre=["Manuela","Camila","Sara"];
+	console.log(nombre);
+
+		var quiere=function()
+		{
+			var n2=document.getElementById("nombre2");
+			var nom2=n2.value;
+			var oli=nombre.length-1;
+			var i=0; 
+
+			while(i<nombre.length)
+			{
+				if(nom2==nombre[i])
+				{
+					var ultimo=nombre[oli];
+					nombre[oli]=nombre[i];
+					nombre[i]=ultimo;
+					nombre.pop();
+
+					console.log(nombre);
+					i=nombre.length;
+					document.getElementById("resultado").value="Nombre eliminado";
+				}
+				else
+				{
+					i=i+1;
+					if(nom2!=nombre[i])
+					{
+						document.getElementById("resultado").value="Nombre no registrado";
+					}
+				}
+			}
+		}
+
+		var ing=function()
+		{
+			var nombre1=document.getElementById("nombre1").value;
+			nombre.push(nombre1);
+			console.log(nombre);
+			document.getElementById("nombre1").value="";
+		}
+
+	</script>
+</body>
+</html>
